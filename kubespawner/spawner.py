@@ -1809,6 +1809,14 @@ class KubeSpawner(Spawner):
         safe_username = escapism.escape(
             self.user.name, safe=safe_chars, escape_char='-'
         ).lower()
+        self.log.info(f"{template=}")
+        self.log.info(f"{self.user.id=}")
+        self.log.info(f"{safe_username=}")
+        self.log.info(f"{self.user.name=}")
+        self.log.info(f"{legacy_escaped_username=}")
+        self.log.info(f"{safe_servername=}")
+        self.log.info(f"{raw_servername=}")
+        self.log.info(f"{hub_namespace=}")
         rendered = template.format(
             userid=self.user.id,
             username=safe_username,
